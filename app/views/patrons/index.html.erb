@@ -1,2 +1,29 @@
-<h1>Patrons#index</h1>
-<p>Find me in app/views/patrons/index.html.erb</p>
+<h1>Listing Patrons</h1>
+
+<p>
+	<%= link_to "New Patron", new_patron_path %>
+</p>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Phone Number</th>
+		<th></th>
+    <th></th>
+    <th></th>
+	</tr>
+
+	<% @patrons.each do |patron| %>
+		<tr>
+			<td><%= patron.first_name + " " + patron.last_name %></td>
+			<td><%= patron.street_address %>
+				<br><%= patron.city + ", " + patron.state.upcase + " " + patron.zip %>
+			</td>
+			<td><%= patron.phone_number %></td>
+			<td><%= link_to "Show", patron %></td>
+    	<td><%= link_to "Edit", edit_patron_path(patron) %></td>
+    	<td><%= link_to "Remove", patron, method: :delete, data: { confirm: "Are you sure?" } %></td>
+		</tr>
+	<% end %>
+</table>
