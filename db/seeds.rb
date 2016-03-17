@@ -56,5 +56,4 @@ patrons = Patron.create([
 {last_name: 'Fowler'   ,first_name: 'Mary'    ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4576'},
 {last_name: 'Waters'   ,first_name: 'David'   ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4577'},
 {last_name: 'Cena'     ,first_name: 'John'    ,street_address: '1234 Milky St'        ,city: 'Austin'     ,state: 'TX', zip: '88888', phone_number: '713-123-4578'},
-{last_name: 'Thomas'   ,first_name: 'Susan'   ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4579'},
-{last_name: 'Bullard'  ,first_name: 'Trenton' ,street_address: '8410 Green Valley Dr' ,city: 'Sugar Land' ,state: 'TX', zip: '77479', phone_number: '832-421-4725'}])
+{last_name: 'Thomas'   ,first_name: 'Susan'   ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4579'}])
