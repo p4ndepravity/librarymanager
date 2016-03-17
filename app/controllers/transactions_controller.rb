@@ -19,4 +19,10 @@ class TransactionsController < ApplicationController
 
   def destroy
   end
+  
+  def menu
+  end
+
+  def search
+  end
 end

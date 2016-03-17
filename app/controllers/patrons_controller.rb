@@ -10,6 +10,7 @@ class PatronsController < ApplicationController
   end
 
   def show
+    @patron = Patron.find(params[:id])
   end
 
   def edit
@@ -19,5 +20,11 @@ class PatronsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def menu
+  end
+
+  def search
   end
 end

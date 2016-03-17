@@ -10,5 +10,9 @@
 
 <%= yield %>
 
+<% unless request.path == root_path %>
+	<p><%= link_to "Main Menu", root_path %></p>
+<% end %>
+
 </body>
 </html>
