@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316193316) do
+ActiveRecord::Schema.define(version: 20160316210516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
-    t.string   "authorLastName"
-    t.string   "authorFirstName"
+    t.string   "author_last_name"
+    t.string   "author_first_name"
     t.integer  "rating"
-    t.string   "isbn10"
-    t.integer  "genreid"
+    t.string   "isbn_10"
+    t.string   "isbn_13"
+    t.datetime "publish_date"
+    t.integer  "genre_id"
+    t.boolean  "is_fiction"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -34,12 +37,13 @@ ActiveRecord::Schema.define(version: 20160316193316) do
   end
 
   create_table "patrons", force: :cascade do |t|
-    t.string   "lastName"
-    t.string   "firstName"
-    t.string   "streetAddress"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "street_address"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "phone_number"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -51,12 +55,15 @@ ActiveRecord::Schema.define(version: 20160316193316) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer  "patronid"
-    t.integer  "bookid"
-    t.datetime "transactionDate"
-    t.integer  "transactionTypeid"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "patron_id"
+    t.integer  "book_id"
+    t.integer  "transaction_type_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
+  add_foreign_key "transactions", "books"
+  add_foreign_key "transactions", "patrons"
+  add_foreign_key "transactions", "transaction_types"
+  add_foreign_key "books", "genres"
 end
