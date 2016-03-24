@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  database: library
+  username: postgres
+  password: 't4ngo lim4 br4vo'
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+
+production:
+  <<: *default
+  database: d9afuoueol9353
+  username: thhvnkstnopmxz
+  password: 'mvDkYRCnT0vG5rA9AMvBv6l3zV'
+  port: 5432
+  host: ec2-54-83-56-177.compute-1.amazonaws.com
+
