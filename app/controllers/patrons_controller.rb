@@ -1,4 +1,6 @@
 class PatronsController < ApplicationController
+  before_action :find_patron, only: [:show, :edit, :update]
+
   def index
     @patrons = Patron.all
   end
@@ -10,7 +12,6 @@ class PatronsController < ApplicationController
   end
 
   def show
-    @patron = Patron.find(params[:id])
   end
 
   def edit
@@ -22,9 +23,19 @@ class PatronsController < ApplicationController
   def destroy
   end
 
-  def menu
+  private
+
+  def find_patron
+    @patron = Patron.find(params[:id])
   end
 
-  def search
+  def patron_params
+    params.require(:patron).permit(:last_name, 
+                                   :first_name, 
+                                   :street_address, 
+                                   :city, 
+                                   :state, 
+                                   :zip, 
+                                   :phone_number)
   end
 end

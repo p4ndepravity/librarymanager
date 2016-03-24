@@ -27,6 +27,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 11322,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/patrons/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 1351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/application.js",
+			"settings":
+			{
+				"buffer_size": 660,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/patrons.coffee",
+			"settings":
+			{
+				"buffer_size": 211,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -60,35 +92,49 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Sites/librarymanager",
 		"/C/Sites/librarymanager/app",
+		"/C/Sites/librarymanager/app/assets",
+		"/C/Sites/librarymanager/app/assets/javascripts",
+		"/C/Sites/librarymanager/app/assets/stylesheets",
 		"/C/Sites/librarymanager/app/controllers",
-		"/C/Sites/librarymanager/app/models",
 		"/C/Sites/librarymanager/app/views",
-		"/C/Sites/librarymanager/app/views/books",
-		"/C/Sites/librarymanager/app/views/home",
 		"/C/Sites/librarymanager/app/views/layouts",
+		"/C/Sites/librarymanager/app/views/pages",
 		"/C/Sites/librarymanager/app/views/patrons",
-		"/C/Sites/librarymanager/app/views/transactions",
-		"/C/Sites/librarymanager/db/migrate"
+		"/C/Sites/librarymanager/vendor/assets",
+		"/C/Sites/librarymanager/vendor/assets/javascripts"
 	],
 	"file_history":
 	[
-		"/C/Sites/librarymanager/app/controllers/transactions_controller.rb",
-		"/C/Sites/librarymanager/app/views/layouts/application.html.erb",
-		"/C/Sites/librarymanager/app/views/transactions/search.html.erb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/application.css",
+		"/C/Sites/librarymanager/app/assets/javascripts/application.js",
+		"/C/Sites/librarymanager/app/assets/javascripts/patrons.js.coffee",
+		"/C/Sites/librarymanager/app/views/patrons/show.html.erb",
 		"/C/Sites/librarymanager/app/controllers/patrons_controller.rb",
+		"/C/Sites/librarymanager/app/views/patrons/index.html.erb.bak.erb",
+		"/C/Sites/librarymanager/app/views/layouts/application.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/index.html.erb",
+		"/C/Sites/librarymanager/config/routes.rb",
+		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Sites/librarymanager/app/assets/javascripts/jquery.dataTables.js",
+		"/C/Sites/librarymanager/app/assets/stylesheets/jquery.dataTables.css",
+		"/C/Sites/librarymanager/app/views/pages/index.html",
+		"/C/Sites/librarymanager/README.md",
+		"/C/Sites/librarymanager/app/assets/stylesheets/font-awesome.css.erb",
+		"/C/Sites/librarymanager/config/application.rb",
+		"/C/Sites/librarymanager/app/controllers/pages_controller.rb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/bootstrap.css",
+		"/C/Sites/librarymanager/app/controllers/transactions_controller.rb",
+		"/C/Sites/librarymanager/app/views/transactions/search.html.erb",
 		"/C/Sites/librarymanager/app/views/home/index.html.erb",
 		"/C/Sites/librarymanager/app/views/patrons/menu.html.erb",
 		"/C/Sites/librarymanager/app/views/books/menu.html.erb",
 		"/C/Sites/librarymanager/app/views/books/search.html.erb",
 		"/C/Sites/librarymanager/app/views/transactions/menu.html.erb",
-		"/C/Sites/librarymanager/config/routes.rb",
 		"/C/Sites/librarymanager/app/controllers/books_controller.rb",
 		"/C/Sites/librarymanager/app/views/patrons/search.html.erb",
-		"/C/Sites/librarymanager/app/views/patrons/index.html.erb",
-		"/C/Sites/librarymanager/app/views/patrons/show.html.erb",
-		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Sites/librarymanager/Gemfile",
 		"/C/Sites/librarymanager/db/seeds.rb",
 		"/C/Sites/librarymanager/db/schema.rb",
@@ -112,9 +158,13 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Sites\\librarymanager\\app\\assets",
+			"C:\\Sites\\librarymanager\\app\\assets\\javascripts",
+			"C:\\Sites\\librarymanager\\app\\assets",
+			""
 		]
 	},
 	"find_state":
@@ -122,6 +172,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dataTable_",
+			"panel-body",
+			"dataTable_wrapper",
+			"wrapper",
+			"DataTable",
+			"	",
+			"thead",
+			"dataTables-example",
+			"dataTables",
+			"dataTables-example",
+			"/*",
+			"%>\n",
+			"Dashboard",
+			"envelope",
 			"delete"
 		],
 		"highlight": true,
@@ -130,6 +194,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"  "
 		],
 		"reverse": false,
 		"show_context": true,
@@ -140,18 +205,135 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/layouts/application.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/patrons/index.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1325,
+								1325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/javascripts/application.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								595,
+								595
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/javascripts/patrons.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 211,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"layout":
 	{
@@ -184,7 +366,7 @@
 	"project": "libman.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -218,11 +400,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": true,
+	"show_minimap": false,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 190.0,
+	"side_bar_width": 277.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
