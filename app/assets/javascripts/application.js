@@ -18,4 +18,5 @@
 //= require dataTables/bootstrap/3/dataTables.bootstrap
 //= require dataTables/bootstrap/3/dataTables.select
 //= require turbolinks
+//= require_tree ./application
 //= require_tree .

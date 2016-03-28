@@ -6,7 +6,7 @@ $(document).ready ->
   table = $('#patrons').DataTable
     responsive: true
     select: 'single'
-
-$('#patrons').on 'click','tr', ->
-  id = table.row(this).id()
-  return
+  table.on 'select', (event, dt, type, indexes) ->
+    event.preventDefault()
+    row = table.row('.selected').data()
+    insertParam "selected_id", row[0]

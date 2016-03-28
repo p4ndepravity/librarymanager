@@ -252,7 +252,7 @@
 
         <div class="navbar-default sidebar" role="navigation">
           <div class="sidebar-nav navbar-collapse">
-          <ul class="nav" id="side-menu">
+          <ul class="nav in" id="side-menu">
             <li class="sidebar-search">
             <div class="input-group custom-search-form">
               <input type="text" class="form-control" placeholder="Search...">
@@ -265,32 +265,55 @@
             <!-- /input-group -->
             </li>
             <li>
-            <%= content_tag :a, href: root_path do %>
-              <%= content_tag :i, class: 'fa fa-dashboard fa-fw' do %>
+              <%= content_tag :a, href: root_path do %>
+                <%= content_tag(:i, class: 'fa fa-dashboard fa-fw'){} %>
+                Dashboard
               <% end %>
-              Dashboard
-            <% end %>
             </li>
             <li>
-            <%= content_tag :a, href: patrons_path do %>
-              <%= content_tag :i, class: 'fa fa-smile-o fa-fw' do %>
+              <%= content_tag :a, href: '#' do %>
+                <%= content_tag(:i, class: 'fa fa-smile-o fa-fw'){} %>
+                Patrons
+                <span class="fa arrow"></span>
               <% end %>
-              Patrons
-            <% end %>
+              <ul class="nav nav-second-level">
+                <li>
+                  <%= link_to 'Search', patrons_path %>
+                </li>
+                <li>
+                  <%= link_to 'Add', new_patron_path %>
+                </li>
+              </ul>
             </li>
             <li>
-            <%= content_tag :a, href: books_path do %>
-              <%= content_tag :i, class: 'fa fa-book fa-fw' do %>
+              <%= content_tag :a, href: '#' do %>
+                <%= content_tag(:i, class: 'fa fa-book fa-fw'){} %>
+                Books
+                <span class="fa arrow"></span>
               <% end %>
-              Books
-            <% end %>
+              <ul class="nav nav-second-level">
+                <li>
+                  <%= link_to 'Search', books_path %>
+                </li>
+                <li>
+                  <%= link_to 'Add', new_book_path %>
+                </li>
+              </ul>
             </li>
             <li>
-            <%= content_tag :a, href: transactions_path do %>
-              <%= content_tag :i, class: 'fa fa-exchange fa-fw' do %>
+              <%= content_tag :a, href: '#' do %>
+                <%= content_tag(:i, class: 'fa fa-exchange fa-fw'){} %>
+                Transactions
+                <span class="fa arrow"></span>
               <% end %>
-              Transactions
-            <% end %>
+              <ul class="nav nav-second-level">
+                <li>
+                  <%= link_to 'Search', transactions_path %>
+                </li>
+                <li>
+                  <%= link_to 'Add', new_transaction_path %>
+                </li>
+              </ul>
             </li>
           </ul>
           </div>
