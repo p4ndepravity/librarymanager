@@ -53,17 +53,13 @@
 <div class="fade modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title" id="newModalLabel">New Patron</h4>
-        </div>
-        <div class="modal-body">
-          New patron form.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="newModalLabel">New Patron</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form' %>
+      </div>
     </div>
   </div>
 </div>

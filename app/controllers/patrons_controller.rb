@@ -3,12 +3,22 @@ class PatronsController < ApplicationController
 
   def index
     @patrons = Patron.all
+    @patron = Patron.new
   end
 
   def new
+    @patron = Patron.new
   end
 
   def create
+    @patron = Patron.new(patron_params)
+    if @patron.save
+      flash[:notice] = "Patron successfully created"
+      redirect_to patrons_path
+    else
+      flash[:alert] = "Failed to create patron"
+      render :new
+    end
   end
 
   def show
