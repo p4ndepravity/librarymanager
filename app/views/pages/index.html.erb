@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Dashboard</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel">
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#newModal">Check Out</button>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel">
+      <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#newModal">Check In</button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="panel panel-green">
+      <div class="panel-heading">
+        Books Recently Checked Out
+      </div>
+      <div class="panel-body">
+        some books...
+      </div>
+      <div class="panel-footer">
+        links to printables/pdfs/data
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="panel panel-yellow">
+      <div class="panel-heading">
+        Books Due Soon
+      </div>
+      <div class="panel-body">
+        a few books...
+      </div>
+      <div class="panel-footer">
+        links to printables/pdfs/data
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="panel panel-red">
+      <div class="panel-heading">
+        Books Overdue
+      </div>
+      <div class="panel-body">
+        hopefully, very few books...
+      </div>
+      <div class="panel-footer">
+        links to printables/pdfs/data
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        All Books Checked Out
+      </div>
+      <div class="panel-body">
+        <ul class="list-unstyled">
+          <% @books.each do |book| %>
+            <% if book.transactions.any? then %>
+              <% if book.transactions.last.transaction_type_id == 1 then %>
+                <li><%= book.title %></li>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        links to printables/pdfs/data
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Transaction Modal -->
+<div class="fade modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="newModalLabel">New Patron</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>

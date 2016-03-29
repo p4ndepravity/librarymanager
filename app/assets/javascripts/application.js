@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
+//= require metisMenu/metisMenu
 //= require jquery.dataTables
 //= require dataTables/bootstrap/3/dataTables.bootstrap
 //= require dataTables/bootstrap/3/dataTables.select

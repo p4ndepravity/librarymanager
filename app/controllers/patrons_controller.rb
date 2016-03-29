@@ -17,7 +17,7 @@ class PatronsController < ApplicationController
       redirect_to patrons_path
     else
       flash[:alert] = "Failed to create patron"
-      render :new
+      redirect_to patrons_path
     end
   end
 

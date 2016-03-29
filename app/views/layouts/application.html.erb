@@ -301,19 +301,10 @@
               </ul>
             </li>
             <li>
-              <%= content_tag :a, href: '#' do %>
+              <%= content_tag :a, href: transactions_path do %>
                 <%= content_tag(:i, class: 'fa fa-exchange fa-fw'){} %>
                 Transactions
-                <span class="fa arrow"></span>
               <% end %>
-              <ul class="nav nav-second-level">
-                <li>
-                  <%= link_to 'Search', transactions_path %>
-                </li>
-                <li>
-                  <%= link_to 'Add', new_transaction_path %>
-                </li>
-              </ul>
             </li>
           </ul>
           </div>
@@ -321,15 +312,8 @@
         </div>
         <!-- /.navbar-static-side -->
       </nav>
-
       <div id="page-wrapper">
-
         <%= yield %>
-
-        <p>
-          <%= params %>
-        </p>
-
       </div>
     </div>
   </body>
