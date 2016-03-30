@@ -31,13 +31,18 @@
   </div>
   <div class="panel-body">
     <div class="dataTable_wrapper">
-      <table class="table table-striped table-bordered table-hover" id="books">
+      <table class="table table-striped table-bordered table-hover" id="books" style="width: 100%;">
         <thead>
           <tr>
             <th>ID</th>
             <th>Title</th>
             <th>Author</th>
             <th>ISBN-10</th>
+            <th>Publish Date</th>
+            <th>Genre</th>
+            <th>Fiction?</th>
+            <th>ISBN-13</th>
+            <th>Rating</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +52,11 @@
               <td><%= book.title %></td>
               <td><%= book.author_first_name + " " + book.author_last_name %></td>
               <td><%= book.isbn_10 %></td>
+              <td><%= book.publish_date %></td>
+              <td><%= book.genre.name %></td>
+              <td><%= book.is_fiction %></td>
+              <td><%= book.isbn_13 %></td>
+              <td><%= book.rating %></td>
             </tr>
           <% end %>
         </tbody>
