@@ -25,8 +25,8 @@
       </div>
       <div class="panel-body">
         <% @books.each do |book| %>
-          <% if @soon_range === book.due_date then %>
-            <%= book.title %> - <%= book.id %>
+          <% if (Time.now-2.days..Time.now) === book.checkout_date then %>
+            <%= book.id %> - <%= book.title %>
           <% end %>
         <% end %>
       </div>

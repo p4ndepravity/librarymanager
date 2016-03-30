@@ -23,6 +23,14 @@ class Book < ActiveRecord::Base
     end
   end
 
+  def checkout_date
+    if self.checked_out? then
+      self.transactions.last.created_at
+    else
+      Time.now+1.day
+    end
+  end
+
   def due_date
     if self.checked_out? then
       self.transactions.last.created_at + 2.weeks
@@ -32,7 +40,7 @@ class Book < ActiveRecord::Base
   end
 
   def due_soon?
-    if (2.days.ago..Time.now)===self.due_date then true else false end
+    if (Time.now..Time.now + 2.days)===self.due_date then true else false end
   end
 
   def overdue?
