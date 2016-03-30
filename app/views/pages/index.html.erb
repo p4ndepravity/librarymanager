@@ -7,12 +7,12 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="panel">
-      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#newModal">Check Out</button>
+      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#checkOutModal">Check Out</button>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="panel">
-      <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#newModal">Check In</button>
+      <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#checkInModal">Check In</button>
     </div>
   </div>
 </div>
@@ -24,7 +24,11 @@
         Books Recently Checked Out
       </div>
       <div class="panel-body">
-        some books...
+        <% @books.each do |book| %>
+          <% if @soon_range === book.due_date then %>
+            <%= book.title %> - <%= book.id %>
+          <% end %>
+        <% end %>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -37,7 +41,11 @@
         Books Due Soon
       </div>
       <div class="panel-body">
-        a few books...
+        <% @books.each do |book| %>
+          <% if book.due_soon? then %>
+            <%= book.title %> - <%= book.id %><br>
+          <% end %>
+        <% end %>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -50,7 +58,11 @@
         Books Overdue
       </div>
       <div class="panel-body">
-        hopefully, very few books...
+        <% @books.each do |book| %>
+          <% if book.overdue? then %>
+            <%= book.title %> - <%= book.id %><br>
+          <% end %>
+        <% end %>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -68,10 +80,8 @@
       <div class="panel-body">
         <ul class="list-unstyled">
           <% @books.each do |book| %>
-            <% if book.transactions.any? then %>
-              <% if book.transactions.last.transaction_type_id == 1 then %>
-                <li><%= book.title %></li>
-              <% end %>
+            <% if book.checked_out? then %>
+              <li><%= book.title %></li>
             <% end %>
           <% end %>
         </ul>
@@ -83,16 +93,31 @@
   </div>
 </div>
 
-<!-- New Transaction Modal -->
-<div class="fade modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="display: none;">
+<!-- Check Out Modal -->
+<div class="fade modal" id="checkOutModal" tabindex="-1" role="dialog" aria-labelledby="checkOutModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="newModalLabel">New Patron</h4>
+        <h4 class="modal-title" id="checkOutModalLabel">Check Out</h4>
       </div>
       <div class="modal-body">
-        <%= render 'form' %>
+        <%= render 'form', type: 1 %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Check In Modal -->
+<div class="fade modal" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="checkInModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="checkInModalLabel">Check In</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', type: 2 %>
       </div>
     </div>
   </div>

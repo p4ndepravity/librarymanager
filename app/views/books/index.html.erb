@@ -38,7 +38,7 @@
             <th>Title</th>
             <th>Author</th>
             <th>ISBN-10</th>
-            <th>Publish Date</th>
+            <th>Published</th>
             <th>Genre</th>
             <th>Fiction?</th>
             <th>ISBN-13</th>
@@ -50,9 +50,9 @@
             <tr>
               <td><%= book.id %></td>
               <td><%= book.title %></td>
-              <td><%= book.author_first_name + " " + book.author_last_name %></td>
+              <td><%= book.author_name %></td>
               <td><%= book.isbn_10 %></td>
-              <td><%= book.publish_date %></td>
+              <td><%= book.publish_date.strftime("%B %Y") %></td>
               <td><%= book.genre.name %></td>
               <td><%= book.is_fiction %></td>
               <td><%= book.isbn_13 %></td>
