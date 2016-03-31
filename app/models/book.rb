@@ -48,14 +48,22 @@ class Book < ActiveRecord::Base
   end
 
   def check_out(patron)
-    self.transactions.create(patron_id: patron.id,transaction_type_id: 1,book_id: self.id)
+    self.transactions.create(patron_id: patron.id,
+                             transaction_type_id: 1,
+                             book_id: self.id)
   end
 
   def check_in()
-    self.transactions.create(transaction_type_id: 2,book_id: self.id)
+    self.transactions.create(transaction_type_id: 2,
+                             book_id: self.id,
+                             patron_id: self.borrower.id)
   end
 
   def self.all_checked_out
     Book.find_by_sql("select books.* from (select book_id, max(transactions.id) from transactions where transaction_type_id = 1 group by book_id) transactions inner join books on transactions.book_id = books.id")
+  end
+
+  def borrower
+    Patron.find(self.transactions.last.patron_id)
   end
 end

@@ -5,8 +5,4 @@ class PagesController < ApplicationController
     @books = Book.all
     @book = Book.new
 	end
-
-  def checkin
-    @book.check_in
-  end
 end

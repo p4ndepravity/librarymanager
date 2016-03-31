@@ -1,0 +1,5 @@
+<%= form_for @transaction do |f| %>
+  <%= f.hidden_field :book_id, value: bookid %>
+  <%= f.hidden_field :transaction_type_id, value: type %>
+  <%= f.submit "Check In", class: 'btn btn-primary btn-xs' %>
+<% end %>

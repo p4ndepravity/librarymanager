@@ -24,11 +24,46 @@
         Books Recently Checked Out
       </div>
       <div class="panel-body">
-        <% @books.each do |book| %>
-          <% if (Time.now-2.days..Time.now) === book.checkout_date then %>
-            <%= book.id %> - <%= book.title %>
-          <% end %>
-        <% end %>
+        <div class="dataTable_wrapper">
+          <table class="table table-striped table-bordered table-hover" id="recent" style="width: 100%;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN-10</th>
+                <th>Published</th>
+                <th>Genre</th>
+                <th>Fiction?</th>
+                <th>ISBN-13</th>
+                <th>Rating</th>
+                <th>Borrower</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @books.each do |book| %>
+                <% if (2.days.ago..Time.now)===book.checkout_date then %>
+                  <tr>
+                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -41,11 +76,46 @@
         Books Due Soon
       </div>
       <div class="panel-body">
-        <% @books.each do |book| %>
-          <% if book.due_soon? then %>
-            <%= book.title %> - <%= book.id %><br>
-          <% end %>
-        <% end %>
+        <div class="dataTable_wrapper">
+          <table class="table table-striped table-bordered table-hover" id="soon" style="width: 100%;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN-10</th>
+                <th>Published</th>
+                <th>Genre</th>
+                <th>Fiction?</th>
+                <th>ISBN-13</th>
+                <th>Rating</th>
+                <th>Borrower</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @books.each do |book| %>
+                <% if book.due_soon? then %>
+                  <tr>
+                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -58,11 +128,46 @@
         Books Overdue
       </div>
       <div class="panel-body">
-        <% @books.each do |book| %>
-          <% if book.overdue? then %>
-            <%= book.title %> - <%= book.id %><br>
-          <% end %>
-        <% end %>
+        <div class="dataTable_wrapper">
+          <table class="table table-striped table-bordered table-hover" id="over" style="width: 100%;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN-10</th>
+                <th>Published</th>
+                <th>Genre</th>
+                <th>Fiction?</th>
+                <th>ISBN-13</th>
+                <th>Rating</th>
+                <th>Borrower</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @books.each do |book| %>
+                <% if book.overdue? then %>
+                  <tr>
+                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
@@ -78,13 +183,46 @@
         All Books Checked Out
       </div>
       <div class="panel-body">
-        <ul class="list-unstyled">
-          <% @books.each do |book| %>
-            <% if book.checked_out? then %>
-              <li><%= book.title %></li>
-            <% end %>
-          <% end %>
-        </ul>
+        <div class="dataTable_wrapper">
+          <table class="table table-striped table-bordered table-hover" id="all" style="width: 100%;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN-10</th>
+                <th>Published</th>
+                <th>Genre</th>
+                <th>Fiction?</th>
+                <th>ISBN-13</th>
+                <th>Rating</th>
+                <th>Borrower</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @books.each do |book| %>
+                <% if book.checked_out? then %>
+                  <tr>
+                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="panel-footer">
         links to printables/pdfs/data
