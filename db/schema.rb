@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20160316210516) do
     t.string   "isbn_10"
     t.string   "isbn_13"
     t.datetime "publish_date"
-    t.integer  "genre_id"
+    t.integer  "genre_id", default: 5
     t.boolean  "is_fiction"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160316210516) do
   create_table "transactions", force: :cascade do |t|
     t.integer  "patron_id"
     t.integer  "book_id"
-    t.integer  "transaction_type_id"
+    t.integer  "transaction_type_id", default: 5
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

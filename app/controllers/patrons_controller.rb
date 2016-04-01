@@ -1,5 +1,5 @@
 class PatronsController < ApplicationController
-  before_action :find_patron, only: [:show, :edit, :update]
+  before_action :find_patron, only: [:show, :edit, :update, :destroy]
 
   def index
     @patrons = Patron.all
@@ -14,10 +14,10 @@ class PatronsController < ApplicationController
     @patron = Patron.new(patron_params)
     if @patron.save
       flash[:notice] = "Patron successfully created"
-      redirect_to patrons_path
+      redirect_to action: 'index' and return
     else
       flash[:alert] = "Failed to create patron"
-      redirect_to patrons_path
+      redirect_to action: 'index' and return
     end
   end
 
@@ -31,6 +31,8 @@ class PatronsController < ApplicationController
   end
 
   def destroy
+    @patron.destroy
+    redirect_to action: 'index' and return
   end
 
   private

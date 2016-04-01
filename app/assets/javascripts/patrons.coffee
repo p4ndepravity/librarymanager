@@ -6,7 +6,6 @@ $(document).ready ->
   table = $('#patrons').DataTable
     responsive: true
     select: 'single'
-  table.on 'select', (event, dt, type, indexes) ->
-    event.preventDefault()
-    row = table.row('.selected').data()
-    insertParam "selected_id", row[0]
+  $('.tooltip-delete').tooltip
+    selector: '[data-toggle=tooltip]'
+    container: 'body'

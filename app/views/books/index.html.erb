@@ -7,24 +7,24 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <div class="dt-buttons btn-group">
-      <a class="btn btn-default" data-toggle="modal" data-target="#checkInModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#checkInModal">
         <span>Check In</span>
       </a>
-      <a class="btn btn-default" data-toggle="modal" data-target="#checkOutModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#checkOutModal">
         <span>Check Out</span>
       </a>
     </div>
-    <a class="btn btn-default" data-toggle="modal" data-target="#showModal">
+    <a class="btn btn-default disabled" data-toggle="modal" data-target="#showModal">
       <span>Show</span>
     </a>
     <div class="dt-buttons btn-group">
       <a class="btn btn-default" data-toggle="modal" data-target="#newModal">
         <span>New</span>
       </a>
-      <a class="btn btn-default" data-toggle="modal" data-target="#editModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#editModal">
         <span>Edit</span>
       </a>
-      <a class="btn btn-default" data-toggle="modal" data-target="#deleteModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#deleteModal">
         <span>Delete</span>
       </a>
     </div>
@@ -49,11 +49,17 @@
           <% @books.each do |book| %>
             <tr>
               <td><%= book.id %></td>
-              <td><%= book.title %></td>
+              <td>
+                <%= book.title %>
+                <%= link_to book, method: :delete, data: { confirm: 'are you sure?' }, class: 'tooltip-delete' do %>
+                  <div class="fa fa-times-circle" data-toggle='tooltip' data-placement='top' title data-original-title='Delete'></div>
+                <% end %>
+                <div class="fa fa-wrench"></div>
+              </td>
               <td><%= book.author_name %></td>
               <td><%= book.isbn_10 %></td>
               <td><%= book.publish_date.strftime("%B %Y") %></td>
-              <td><%= book.genre.name %></td>
+              <td><%= if !book.genre.nil? then book.genre.name else book.genre.class end %></td>
               <td><%= book.is_fiction %></td>
               <td><%= book.isbn_13 %></td>
               <td><%= book.rating %></td>

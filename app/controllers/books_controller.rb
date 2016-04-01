@@ -1,7 +1,10 @@
 class BooksController < ApplicationController
+  before_action :find_book, only: [:show, :edit, :update, :destroy]
+
   def index
     @books = Book.all
     @book = Book.new
+    @genres = Genre.all
   end
 
   def new
@@ -29,12 +32,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
-  end
-  
-  def menu
-  end
-
-  def search
+    @book.destroy
+    redirect_to action: 'index' and return
   end
 
   private

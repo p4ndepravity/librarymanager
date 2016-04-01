@@ -6,7 +6,3 @@ $(document).ready ->
   table = $('#books').DataTable
     responsive: true
     select: 'single'
-  $('#books tbody tr').click (event) ->
-    event.preventDefault()
-    window.open $(this).data("href")
-    return

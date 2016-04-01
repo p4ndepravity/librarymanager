@@ -18,14 +18,14 @@
       <a class="btn btn-default" data-toggle="modal" data-target="#newModal">
         <span>New</span>
       </a>
-      <a class="btn btn-default" data-toggle="modal" data-target="#editModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#editModal">
         <span>Edit</span>
       </a>
-      <a class="btn btn-default" data-toggle="modal" data-target="#deleteModal">
+      <a class="btn btn-default disabled" data-toggle="modal" data-target="#deleteModal">
         <span>Delete</span>
       </a>
     </div>
-    <a class="btn btn-default" data-toggle="modal" data-target="#showModal">
+    <a class="btn btn-default disabled" data-toggle="modal" data-target="#showModal">
       <span>Show</span>
     </a>
   </div>
@@ -44,7 +44,13 @@
           <% @patrons.each do |patron| %>
             <tr>  
               <td><%= patron.id %></td>
-              <td><%= patron.first_name + " " + patron.last_name %></td>
+              <td>
+                <%= patron.first_name + " " + patron.last_name %>
+                <%= link_to patron, method: :delete, data: { confirm: 'are you sure?' }, class: 'tooltip-delete' do %>
+                  <div class="fa fa-times-circle" data-toggle='tooltip' data-placement='top' title data-original-title='Delete'></div>
+                <% end %>
+                <div class="fa fa-wrench"></div>
+              </td>
               <td><%= patron.street_address %>
                 <br><%= "#{patron.city}, #{patron.state.upcase} #{patron.zip}" %>
               </td>

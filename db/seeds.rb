@@ -10,7 +10,11 @@ genres = Genre.create([
 {name: 'police thriller'   },
 {name: 'spy thriller'      },
 {name: 'modern proletariat'},
-{name: 'modern utopian'    }])
+{name: 'modern utopian'    },
+{name: 'suspense'          },
+{name: 'comedy'            },
+{name: 'romance'           },
+{name: 'XBLANKX'           }])
 
 books = Book.create([
 {title: 'Without Remorse'                  ,author_last_name: 'Clancy' ,author_first_name: 'Tom'    ,rating: '9'  ,isbn_10: '0425143325', isbn_13: '9780425143322', genre: genres.first   ,publish_date: '1994-08-01 00:00:00', is_fiction: '1'},
@@ -41,7 +45,8 @@ ttypes = TransactionType.create([
 {name: 'book check out'      },
 {name: 'book check in'       },
 {name: 'merchandise purchase'},
-{name: 'merchandise return'  }])
+{name: 'merchandise return'  },
+{name: 'XBLANKX'             }])
 
 patrons = Patron.create([
 {last_name: 'Doe'      ,first_name: 'John'    ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4567'},

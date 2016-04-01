@@ -13,7 +13,11 @@
   </div>
   <div class="form-group">
     <label>Genre</label>
-    <%= f.text_field :isbn_10, class: 'form-control' %>
+    <div class="radio">
+      <% @genres[0..-2].each do |g| %>
+        <label><%= f.radio_button :genre_id, value: g.id, class: 'form-control' %><%= g.name %></label><br>
+      <% end %>
+    </div>
   </div>
   <div class="form-group">
     <label>ISBN-10</label>
