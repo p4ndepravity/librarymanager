@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update, :destroy]
+  before_action :get_genres
 
   def index
     @books = Book.all
@@ -18,7 +19,7 @@ class BooksController < ApplicationController
       redirect_to books_path
     else
       flash[:alert] = "Failed to create book"
-      render :new
+      redirect_to books_path
     end
   end
 
@@ -29,6 +30,13 @@ class BooksController < ApplicationController
   end
 
   def update
+    if @book.update(book_params)
+      flash[:notice] = "Book successfully updated"
+      redirect_to books_path
+    else
+      flash[:alert] = "Failed to update book"
+      redirect_to books_path
+    end
   end
 
   def destroy
@@ -52,5 +60,9 @@ class BooksController < ApplicationController
                                  :is_fiction, 
                                  :genre,
                                  :rating)
+  end
+
+  def get_genres
+    @genres = Genre.all
   end
 end

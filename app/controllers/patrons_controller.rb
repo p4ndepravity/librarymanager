@@ -28,6 +28,13 @@ class PatronsController < ApplicationController
   end
 
   def update
+    if @patron.update(patron_params)
+      flash[:notice] = "Patron successfully updated"
+      redirect_to patrons_path
+    else
+      flash[:alert] = "Failed to update patron"
+      redirect_to patrons_path
+    end
   end
 
   def destroy

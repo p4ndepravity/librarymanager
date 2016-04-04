@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
   validates :isbn_10, presence: true
 
   def author_name
-    "#{author_first_name} #{author_last_name}"
+    "#{author_first_name.titlecase} #{author_last_name.titlecase}"
   end
 
   def checked_out?

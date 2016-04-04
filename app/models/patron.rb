@@ -12,6 +12,6 @@ class Patron < ActiveRecord::Base
   validates :phone_number, presence: true
 
   def name
-    "#{first_name} #{last_name}"
+    "#{first_name.titlecase} #{last_name.titlecase}"
   end
 end

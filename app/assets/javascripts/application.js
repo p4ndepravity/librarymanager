@@ -15,8 +15,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require metisMenu/metisMenu
+//= require_tree ./application
 //= require jquery.dataTables
 //= require_tree ./dataTables/bootstrap/3
 //= require turbolinks
-//= require_tree ./application
 //= require_tree .
