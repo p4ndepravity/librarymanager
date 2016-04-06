@@ -25,6 +25,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @transactions = if @book.transactions then @book.transactions else end
   end
 
   def edit

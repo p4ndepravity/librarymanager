@@ -52,6 +52,6 @@ class Book < ActiveRecord::Base
   # end
 
   def borrower
-    Patron.find(self.transactions.last.patron_id)
+    self.transactions.last.patron
   end
 end
