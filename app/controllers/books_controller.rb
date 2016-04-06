@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @genres = Genre.all
+    @transaction = Transaction.new
   end
 
   def new

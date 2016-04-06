@@ -22,6 +22,9 @@ class PatronsController < ApplicationController
   end
 
   def show
+    @books = Book.all
+    @transactions = if @patron.transactions.any? then @patron.transactions else end
+    @transaction = Transaction.new
   end
 
   def edit

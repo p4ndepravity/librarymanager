@@ -2,5 +2,5 @@
   <%= f.hidden_field :book_id, value: book.id %>
   <%= f.hidden_field :patron_id, value: book.borrower.id %>
   <%= f.hidden_field :transaction_type_id, value: 2 %>
-  <%= f.submit "Check In", class: 'btn btn-primary btn-xs' %>
+  <%= render image, f: f %>
 <% end %>

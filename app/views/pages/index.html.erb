@@ -4,6 +4,13 @@
   </div>
 </div>
 
+<% if flash[:notice] then %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:alert] then %>
+  <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% end %>
+
 <div class="panel panel-primary">
   <div class="panel-body">
     <div class="row">
@@ -44,21 +51,23 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if (2.days.ago..Time.now)===book.checkout_date then %>
-                  <tr>
-                    <td><%= render 'layouts/check_in_btn', book: book %></td>
-                    <td><%= book.id %></td>
-                    <td><%= book.title %></td>
-                    <td><%= book.author_name %></td>
-                    <td><%= book.isbn_10 %></td>
-                    <td><%= book.publish_date.strftime("%B %Y") %></td>
-                    <td><%= book.genre.name %></td>
-                    <td><%= book.is_fiction %></td>
-                    <td><%= book.isbn_13 %></td>
-                    <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
-                  </tr>
+                <% if book.checked_out? %>
+                  <% if (2.days.ago..Time.now)===book.checkout_date then %>
+                    <tr>
+                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= book.id %></td>
+                      <td><%= book.title %></td>
+                      <td><%= book.author_name %></td>
+                      <td><%= book.isbn_10 %></td>
+                      <td><%= book.publish_date.strftime("%B %Y") %></td>
+                      <td><%= book.genre.name %></td>
+                      <td><%= book.is_fiction %></td>
+                      <td><%= book.isbn_13 %></td>
+                      <td><%= book.rating %></td>
+                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                      <td><%= book.due_date %></td>
+                    </tr>
+                  <% end %>
                 <% end %>
               <% end %>
             </tbody>
@@ -96,21 +105,23 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.due_soon? then %>
-                  <tr>
-                    <td><%= render 'layouts/check_in_btn', book: book %></td>
-                    <td><%= book.id %></td>
-                    <td><%= book.title %></td>
-                    <td><%= book.author_name %></td>
-                    <td><%= book.isbn_10 %></td>
-                    <td><%= book.publish_date.strftime("%B %Y") %></td>
-                    <td><%= book.genre.name %></td>
-                    <td><%= book.is_fiction %></td>
-                    <td><%= book.isbn_13 %></td>
-                    <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
-                  </tr>
+                <% if book.checked_out? %>
+                  <% if book.due_soon? then %>
+                    <tr>
+                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= book.id %></td>
+                      <td><%= book.title %></td>
+                      <td><%= book.author_name %></td>
+                      <td><%= book.isbn_10 %></td>
+                      <td><%= book.publish_date.strftime("%B %Y") %></td>
+                      <td><%= book.genre.name %></td>
+                      <td><%= book.is_fiction %></td>
+                      <td><%= book.isbn_13 %></td>
+                      <td><%= book.rating %></td>
+                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                      <td><%= book.due_date %></td>
+                    </tr>
+                  <% end %>
                 <% end %>
               <% end %>
             </tbody>
@@ -148,21 +159,23 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.overdue? then %>
-                  <tr>
-                    <td><%= render 'layouts/check_in_btn', book: book %></td>
-                    <td><%= book.id %></td>
-                    <td><%= book.title %></td>
-                    <td><%= book.author_name %></td>
-                    <td><%= book.isbn_10 %></td>
-                    <td><%= book.publish_date.strftime("%B %Y") %></td>
-                    <td><%= book.genre.name %></td>
-                    <td><%= book.is_fiction %></td>
-                    <td><%= book.isbn_13 %></td>
-                    <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
-                  </tr>
+                <% if book.checked_out? %>
+                  <% if book.overdue? then %>
+                    <tr>
+                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= book.id %></td>
+                      <td><%= book.title %></td>
+                      <td><%= book.author_name %></td>
+                      <td><%= book.isbn_10 %></td>
+                      <td><%= book.publish_date.strftime("%B %Y") %></td>
+                      <td><%= book.genre.name %></td>
+                      <td><%= book.is_fiction %></td>
+                      <td><%= book.isbn_13 %></td>
+                      <td><%= book.rating %></td>
+                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                      <td><%= book.due_date %></td>
+                    </tr>
+                  <% end %>
                 <% end %>
               <% end %>
             </tbody>
@@ -205,7 +218,7 @@
               <% @books.each do |book| %>
                 <% if book.checked_out? then %>
                   <tr>
-                    <td><%= render 'layouts/check_in_btn', book: book %></td>
+                    <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>

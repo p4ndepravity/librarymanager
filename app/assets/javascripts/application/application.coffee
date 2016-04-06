@@ -26,3 +26,8 @@ $ ->
   if element.is('li')
     element.addClass 'active'
   return
+
+$ ->
+  $('.tooltip-class').tooltip
+    selector: '[data-toggle=tooltip]'
+    container: 'body'

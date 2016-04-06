@@ -14,4 +14,3 @@ $(document).ready ->
 
   table = $('#all').DataTable
     responsive: true
-    select: 'single'

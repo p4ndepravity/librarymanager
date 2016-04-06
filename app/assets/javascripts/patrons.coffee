@@ -6,18 +6,6 @@ $(document).ready ->
   oTable = $('#patrons').DataTable
     responsive: true
 
-  $('.tooltip-delete').tooltip
-    selector: '[data-toggle=tooltip]'
-    container: 'body'
-
-  $('.tooltip-edit').tooltip
-    selector: '[data-toggle=tooltip]'
-    container: 'body'
-
-  $('.tooltip-show').tooltip
-    selector: '[data-toggle=tooltip]'
-    container: 'body'
-  
   $.rails.allowAction = (link) ->
     return true unless link.attr('data-confirm')
     $.rails.showConfirmDialog(link) 

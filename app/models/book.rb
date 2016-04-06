@@ -20,19 +20,11 @@ class Book < ActiveRecord::Base
   end
 
   def checkout_date
-    if self.checked_out? then
-      self.transactions.last.created_at
-    else
-      Time.now+1.day
-    end
+    self.transactions.last.created_at
   end
 
   def due_date
-    if self.checked_out? then
-      self.transactions.last.created_at + 2.weeks
-    else
-      Time.now + 2.weeks
-    end
+    self.transactions.last.created_at + 2.weeks
   end
 
   def due_soon?
@@ -60,8 +52,6 @@ class Book < ActiveRecord::Base
   # end
 
   def borrower
-    if self.checked_out? then
-      Patron.find(self.transactions.last.patron_id)
-    end
+    Patron.find(self.transactions.last.patron_id)
   end
 end

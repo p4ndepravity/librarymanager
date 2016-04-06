@@ -31,18 +31,16 @@
                 <%= book.title.titlecase %>
                 <%= delete_link(book, "book") %>
                 <%= edit_link(book, 'book') %>
+                <%= show_link(book, 'book') %>
                 <%= checkout_btn(book) %>
-                
                 <% if book.checked_out? then %> 
-                  <%= link_to new_book_transaction_path(book), data: {remote: true, toggle: 'modal', target: '#checkInModal'}, class: 'tooltip-edit' do %>
-                    <div class="glyphicon glyphicon-log-in" data-toggle='tooltip' data-placement='top' data-original-title='Check-In'></div>
-                  <% end %>
+                  <%= render 'check_in_btn', book: book, image: 'icon' %>
                 <% end %> 
               </td>
               <td><%= book.author_name %></td>
               <td><%= book.isbn_10 %></td>
               <td><%= book.publish_date.strftime("%B %Y") %></td>
-              <td><%= if !book.genre.nil? then book.genre.name.titlecase else book.genre.class end %></td>
+              <td><%= book.genre.name.titlecase %></td>
               <td><%= book.is_fiction %></td>
               <td><%= book.isbn_13 %></td>
               <td><%= book.rating %></td>
@@ -64,10 +62,6 @@
 
 <!-- Check Out Book Modal -->
 <div class="fade modal" id="checkOutModal" tabindex="-1" role="dialog" aria-labelledby="checkOutModalLabel" aria-hidden="true" style="display: none;">
-</div>
-
-<!-- Check In Book Modal -->
-<div class="fade modal" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="checkInModalLabel" aria-hidden="true" style="display: none;">
 </div>
 
 <!-- Show Book Modal -->

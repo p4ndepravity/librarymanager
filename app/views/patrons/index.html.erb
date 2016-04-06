@@ -6,21 +6,6 @@
   </div>
 </div>
 
-<% if flash[:notice] then %>
-  <div class="alert alert-info"><%= flash[:notice] %></div>
-<% end %>
-<% if flash[:alert] then %>
-  <div class="alert alert-danger"><%= flash[:alert] %></div>
-<% end %>
-
-<% if @patron.errors.any? then %>
-  <ul class="list-unstyled">
-    <% @patron.errors.full_messages.each do |message| %>
-      <li class="alert alert-danger"><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="dataTable_wrapper">

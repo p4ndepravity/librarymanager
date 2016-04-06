@@ -9,7 +9,7 @@ module ApplicationHelper
                    confirm: message, 
                    ok: 'Confirm', 
                    cancel: 'Cancel'},
-            class: 'tooltip-delete') do
+            class: 'tooltip-class') do
       content_tag(:div, 
                   class: 'glyphicon glyphicon-remove-sign', 
                   data: {toggle: 'tooltip', 
@@ -27,7 +27,7 @@ module ApplicationHelper
                    target: '#editModal',
                    ok: 'Submit',
                    cancel: 'Cancel'},
-            class: 'tooltip-edit') do
+            class: 'tooltip-class') do
       content_tag(:div,
                   class: 'fa fa-wrench',
                   data: {toggle: 'tooltip',
@@ -57,12 +57,12 @@ module ApplicationHelper
                    toggle: 'modal',
                    target: '#showModal',
                    ok: 'OK'},
-            class: 'tooltip-show') do
+            class: 'tooltip-class') do
       content_tag(:div,
                   class: 'glyphicon glyphicon-info-sign',
                   data: {toggle: 'tooltip',
                          placement: 'top',
-                         'original-title' => 'Show'}) do
+                         'original-title' => 'Info'}) do
       end
     end
   end
@@ -75,7 +75,7 @@ module ApplicationHelper
                    target: '#checkOutModal',
                    ok: 'Submit',
                    cancel: 'Cancel'},
-            class: 'tooltip-checkout') do
+            class: 'tooltip-class') do
       content_tag(:div,
                   class: 'glyphicon glyphicon-log-out',
                   data: {toggle: 'tooltip',
