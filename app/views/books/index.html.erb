@@ -31,9 +31,8 @@
               <td>
                 <%= book.title.titlecase %>
                 <%= delete_link(book, "book") %>
-                <%= link_to edit_book_path(book), data: {remote: true, toggle: 'modal', target: '#editModal'}, class: 'tooltip-edit' do %>
-                  <div class="fa fa-wrench" data-toggle='tooltip' data-placement='top' data-original-title='Edit'></div>
-                <% end %>
+                <%= edit_link(book, 'book') %>
+                
                 <%= link_to new_book_transaction_path(book), data: {remote: true, toggle: 'modal', target: '#checkOutModal'}, class: 'tooltip-edit' do %>
                   <div class="glyphicon glyphicon-log-out" data-toggle='tooltip' data-placement='top' data-original-title='Check-Out'></div>
                 <% end %>
@@ -60,17 +59,6 @@
 
 <!-- New Book Modal -->
 <div class="fade modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="newModalLabel">New Book</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'form' %>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- Edit Book Modal -->
@@ -85,22 +73,6 @@
 <div class="fade modal" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="checkInModalLabel" aria-hidden="true" style="display: none;">
 </div>
 
-<% if @current_book then %>
-  <!-- Show Book Modal -->
-  <div class="fade modal" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-            <h4 class="modal-title" id="showModalLabel"><%= @current_book.title %></h4>
-          </div>
-          <div class="modal-body">
-            <%= @current_book.id %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-          </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+<!-- Show Book Modal -->
+<div class="fade modal" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel" aria-hidden="true" style="display: none;">
+</div>
