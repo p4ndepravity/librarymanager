@@ -5,13 +5,13 @@
 $(document).ready ->
   table = $('#recent').DataTable
     responsive: true
-    select: 'single'
+
   table = $('#soon').DataTable
     responsive: true
-    select: 'single'
+
   table = $('#over').DataTable
     responsive: true
-    select: 'single'
+
   table = $('#all').DataTable
     responsive: true
     select: 'single'

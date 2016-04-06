@@ -1,9 +1,7 @@
 $ ->
   $('#side-menu').metisMenu()
   return
-#Loads the correct sidebar on window load,
-#collapses the sidebar on window resize.
-# Sets the min-height of #page-wrapper to window size
+
 $ ->
   $(window).bind 'load resize', ->
     topOffset = 50

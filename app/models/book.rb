@@ -64,6 +64,10 @@ class Book < ActiveRecord::Base
   end
 
   def borrower
-    Patron.find(self.transactions.last.patron_id)
+    if self.checked_out? then
+      Patron.find(self.transactions.last.patron_id)
+    else
+      Patron.new(first_name: 'not checked out')
+    end
   end
 end

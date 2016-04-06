@@ -1,12 +1,4 @@
 class TransactionsController < ApplicationController
-  def index
-    @transactions = Transaction.all
-    @transaction = Transaction.new
-  end
-
-  def new
-  end
-
   def create
     @transaction = Transaction.new(transaction_params)
     if @transaction.save
@@ -16,15 +8,6 @@ class TransactionsController < ApplicationController
       flash[:alert] = "Failed to create transaction"
       redirect_to root_path
     end
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy

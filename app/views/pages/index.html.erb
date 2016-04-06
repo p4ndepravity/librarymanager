@@ -4,15 +4,15 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel">
-      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#checkOutModal">Check Out</button>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel">
-      <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#checkInModal">Check In</button>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= new_link('patron', 'btn btn-primary btn-lg btn-block', 'New Patron') %>
+      </div>
+      <div class="col-sm-6">
+        <%= new_link('book', 'btn btn-primary btn-lg btn-block', 'New Book') %>
+      </div>
     </div>
   </div>
 </div>
@@ -46,7 +46,7 @@
               <% @books.each do |book| %>
                 <% if (2.days.ago..Time.now)===book.checkout_date then %>
                   <tr>
-                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= render 'layouts/check_in_btn', book: book %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>
@@ -98,7 +98,7 @@
               <% @books.each do |book| %>
                 <% if book.due_soon? then %>
                   <tr>
-                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= render 'layouts/check_in_btn', book: book %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>
@@ -150,7 +150,7 @@
               <% @books.each do |book| %>
                 <% if book.overdue? then %>
                   <tr>
-                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= render 'layouts/check_in_btn', book: book %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>
@@ -205,7 +205,7 @@
               <% @books.each do |book| %>
                 <% if book.checked_out? then %>
                   <tr>
-                    <td><%= render 'checkin', type: 2, bookid: book.id %></td>
+                    <td><%= render 'layouts/check_in_btn', book: book %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>
@@ -231,32 +231,10 @@
   </div>
 </div>
 
-<!-- Check Out Modal -->
-<div class="fade modal" id="checkOutModal" tabindex="-1" role="dialog" aria-labelledby="checkOutModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="checkOutModalLabel">Check Out</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'form', type: 1 %>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Check In Modal -->
 <div class="fade modal" id="checkInModal" tabindex="-1" role="dialog" aria-labelledby="checkInModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="checkInModalLabel">Check In</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'form', type: 2 %>
-      </div>
-    </div>
-  </div>
+</div>
+
+<!-- New Modal -->
+<div class="fade modal" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true" style="display: none;">
 </div>

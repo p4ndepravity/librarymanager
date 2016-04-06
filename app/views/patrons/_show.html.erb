@@ -1,0 +1,9 @@
+<h4>Books checked out:</h4>
+<ul>
+  <% @patron.books.each do |book| %>
+    <% if book.checked_out? then %>
+      <li class="unstyled"><% book.title %>
+    <% end %>
+  <% end %>
+</ul>
+<button type="button" class="btn btn-default" data-dismiss="modal">OK</button>

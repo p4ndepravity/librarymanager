@@ -3,14 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  table = $('#patrons').DataTable
+  oTable = $('#patrons').DataTable
     responsive: true
-  
+
   $('.tooltip-delete').tooltip
     selector: '[data-toggle=tooltip]'
     container: 'body'
 
   $('.tooltip-edit').tooltip
+    selector: '[data-toggle=tooltip]'
+    container: 'body'
+
+  $('.tooltip-show').tooltip
     selector: '[data-toggle=tooltip]'
     container: 'body'
   
@@ -37,7 +41,7 @@ $(document).ready ->
                    #{message}
                  </div>
                  <div class="modal-footer">
-                   <a data-dismiss="modal" class="btn">#{link.data('cancel')}</a>
+                   <a data-dismiss="modal" class="btn btn-default">#{link.data('cancel')}</a>
                    <a data-dismiss="modal" class="btn btn-primary confirm">#{link.data('ok')}</a>
                  </div>
                </div>

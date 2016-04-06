@@ -38,8 +38,13 @@ class PatronsController < ApplicationController
   end
 
   def destroy
-    @patron.destroy
-    redirect_to action: 'index' and return
+    if @patron.destroy
+      flash[:notice] = "Patron successfully deleted"
+      redirect_to patrons_path
+    else
+      flash[:alert] = "Failed to delete patron"
+      redirect_to patrons_path
+    end
   end
 
   private

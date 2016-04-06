@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'pages#index'
 
-  resources :patrons
+  concern :borrow do
+    resources :transactions
+  end
 
-  resources :books
-  
-  resources :transactions
+  resources :patrons, concerns: :borrow
+
+  resources :books, concerns: :borrow
 end
