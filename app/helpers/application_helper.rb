@@ -67,4 +67,22 @@ module ApplicationHelper
     end
   end
 
+  def checkout_btn(book)
+    url = "/books/#{book.id}/transactions/new"
+    link_to(url,
+            data: {remote: true,
+                   toggle: 'modal',
+                   target: '#checkOutModal',
+                   ok: 'Submit',
+                   cancel: 'Cancel'},
+            class: 'tooltip-checkout') do
+      content_tag(:div,
+                  class: 'glyphicon glyphicon-log-out',
+                  data: {toggle: 'tooltip',
+                         placement: 'top',
+                         'original-title' => 'Check Out'}) do
+      end
+    end
+  end
+
 end

@@ -1,8 +1,8 @@
 <h4>Books checked out:</h4>
-<ul>
+<ul class="list-unstyled">
   <% @patron.books.each do |book| %>
     <% if book.checked_out? then %>
-      <li class="unstyled"><% book.title %>
+      <li><% book.title %>
     <% end %>
   <% end %>
 </ul>

@@ -1,5 +1,6 @@
-<%= form_for book.transactions.new, url: book_transactions_path(book) do |f| %>
+<%= form_for @transaction, url: book_transactions_path(book) do |f| %>
   <%= f.hidden_field :book_id, value: book.id %>
+  <%= f.hidden_field :patron_id, value: book.borrower.id %>
   <%= f.hidden_field :transaction_type_id, value: 2 %>
   <%= f.submit "Check In", class: 'btn btn-primary btn-xs' %>
 <% end %>

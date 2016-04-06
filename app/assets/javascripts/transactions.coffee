@@ -5,4 +5,3 @@
 $(document).ready ->
   table = $('#transactions').DataTable
     responsive: true
-    select: 'single'

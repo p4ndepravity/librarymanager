@@ -1,0 +1,15 @@
+<%= form_for @transaction, url: book_transactions_path do |f| %>
+  <% if @transaction.errors.any? then %>
+    <ul class="list-unstyled">
+      <% @patron.errors.full_messages.each do |message| %>
+        <li class="alert alert-danger"><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="form-group">
+    <label>Patron ID</label>
+    <%= f.text_field :patron_id, class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :transaction_type_id, value: 1 %>
+  <%= f.submit "Check Out", class: 'btn btn-primary' %>
+<% end %>

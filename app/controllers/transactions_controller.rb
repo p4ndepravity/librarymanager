@@ -1,6 +1,22 @@
 class TransactionsController < ApplicationController
+  
+  def index
+    if params[:book_id] then
+      book = Book.find(params[:book_id])
+      @transactions = book.transactions
+    elsif params[:patron_id] then
+      patron = Patron.find(params[:patron_id])
+      @transactions = patron.transactions
+    end
+  end  
+
+  def new() 
+    @transaction = Transaction.new
+  end
+
   def create
-    @transaction = Transaction.new(transaction_params)
+    book = Book.find(params[:book_id])
+    @transaction = book.transactions.new(transaction_params)
     if @transaction.save
       flash[:notice] = "Transaction successfully created"
       redirect_to root_path
@@ -17,7 +33,7 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:patron_id,
-                                        :book_id,
-                                        :transaction_type_id)
+                                        :transaction_type_id,
+                                        :book_id)
   end
 end

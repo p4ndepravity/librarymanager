@@ -3,5 +3,6 @@ class PagesController < ApplicationController
     @books = Book.all
     @book = Book.new
     @patron = Patron.new
+    @transaction = Transaction.new
 	end
 end
