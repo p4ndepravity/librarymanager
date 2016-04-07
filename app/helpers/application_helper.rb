@@ -11,7 +11,7 @@ module ApplicationHelper
                    cancel: 'Cancel'},
             class: 'tooltip-class') do
       content_tag(:div, 
-                  class: 'glyphicon glyphicon-remove-sign', 
+                  class: 'fa fa-times', 
                   data: {toggle: 'tooltip', 
                          placement: 'top', 
                          'original-title' => 'Delete'}) do
@@ -81,6 +81,23 @@ module ApplicationHelper
                   data: {toggle: 'tooltip',
                          placement: 'top',
                          'original-title' => 'Check Out'}) do
+      end
+    end
+  end
+
+  def profile_link(object, type)
+    url = "/#{type}s/#{object.id}"
+    if type == "patron" then
+      icon = "fa-user"
+    else
+      icon = "fa-search"
+    end
+    link_to(url, class: 'tooltip-class') do
+      content_tag(:div,
+                  class: "fa #{icon}",
+                  data: {toggle: 'tooltip',
+                         placement: 'top',
+                         'original-title' => 'Profile'}) do
       end
     end
   end

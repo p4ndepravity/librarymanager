@@ -32,6 +32,7 @@
                 <%= delete_link(book, "book") %>
                 <%= edit_link(book, 'book') %>
                 <%= show_link(book, 'book') %>
+                <%= profile_link(book, 'book') %>
                 <%= checkout_btn(book) %>
                 <% if book.checked_out? then %> 
                   <%= render 'check_in_btn', book: book, image: 'icon' %>
