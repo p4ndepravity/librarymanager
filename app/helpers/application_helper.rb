@@ -85,11 +85,15 @@ module ApplicationHelper
     end
   end
 
+  def checkin_link book, style: 'btn', class_tag: 'btn btn-primary btn-xs'
+    render 'check_in_btn', book: book, image: style, class_tag: class_tag
+  end
+
   def profile_link(object, type)
     url = "/#{type}s/#{object.id}"
     if type == "patron" then
       icon = "fa-user"
-    else
+    elsif type == "book"
       icon = "fa-search"
     end
     link_to(url, class: 'tooltip-class') do

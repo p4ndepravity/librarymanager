@@ -42,11 +42,11 @@ books = Book.create([
 {title: '1984'                             ,author_last_name: 'Orwell' ,author_first_name: 'George' ,rating: '8'  ,isbn_10: '0451524934', isbn_13: '9780451524935', genre: genres.fourth  ,publish_date: '1961-01-01 00:00:00', is_fiction: '1'}])
 
 ttypes = TransactionType.create([
-{name: 'book check out'      },
-{name: 'book check in'       },
-{name: 'merchandise purchase'},
-{name: 'merchandise return'  },
-{name: 'XBLANKX'             }])
+{name: 'check out'},
+{name: 'check in' },
+{name: 'purchase' },
+{name: 'return'   },
+{name: 'XBLANKX'  }])
 
 patrons = Patron.create([
 {last_name: 'Doe'      ,first_name: 'John'    ,street_address: '1234 Milky Way'       ,city: 'Houston'    ,state: 'TX', zip: '77001', phone_number: '713-123-4567'},

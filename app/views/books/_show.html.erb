@@ -1,3 +1,7 @@
+<% if in_modal then %>
+  <div class="modal-body">
+<% end %>
+  
 <% if @book.checked_out? %>
   <div class="panel panel-warning">
     <div class="panel-heading">
@@ -9,6 +13,9 @@
           <li><%= attr[0] %>: <%= attr[1] %></li>
         <% end %>
       </ul>
+    </div>
+    <div class="panel-footer">
+      <%= checkin_link(@book, class_tag: 'btn btn-primary') %>
     </div>
   </div>
 <% end %>
@@ -43,17 +50,17 @@
   </div>
 </div>
 
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-</div>
+<% if in_modal then %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+<% end %>
 
 <script>
-  $(document).ready(function() {
-    $('#history').DataTable({
-      responsive: true,
-      "lengthMenu": [5,10,20,50,100],
-      "pageLength": 5
-    });
+  $('#history').DataTable({
+    responsive: true,
+    "lengthMenu": [5,10,20,50,100],
+    "pageLength": 5,
+    "order": [ 2, "desc" ]
   });
 </script>

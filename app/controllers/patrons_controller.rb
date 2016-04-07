@@ -14,10 +14,10 @@ class PatronsController < ApplicationController
     @patron = Patron.new(patron_params)
     if @patron.save
       flash[:notice] = "Patron successfully created"
-      redirect_to root_path
+      redirect_to patrons_path
     else
       flash[:alert] = "Failed to create patron"
-      redirect_to root_path
+      redirect_to patrons_path
     end
   end
 

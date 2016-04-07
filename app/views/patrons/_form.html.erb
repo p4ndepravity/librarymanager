@@ -1,4 +1,8 @@
 <%= form_for @patron do |f| %>
+  <% if in_modal then %>
+    <div class="modal-body">
+  <% end %>
+
   <% if @patron.errors.any? then %>
     <ul class="list-unstyled">
       <% @patron.errors.full_messages.each do |message| %>
@@ -6,39 +10,36 @@
       <% end %>
     </ul>
   <% end %>
-  <div class="form-group">
-    <label>First Name</label>
-    <%= f.text_field :first_name, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <label>Last Name</label>
-    <%= f.text_field :last_name, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <label>Street Address</label>
-    <%= f.text_field :street_address, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <label>City</label>
-    <%= f.text_field :city, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <label>State</label>
-    <%= f.text_field :state, class: 'form-control' %>
-    <p class="help-block">Example: TX</p>
-  </div>
-  <div class="form-group">
-    <label>Zipcode</label>
-    <%= f.text_field :zip, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <label>Phone Number</label>
-    <%= f.text_field :phone_number, class: 'form-control' %>
-    <p class="help-block">Example: 000-000-0000</p>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-  <button type="reset" class="btn btn-default">Reset</button>
-  <% if current_page? patrons_path then %>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-  <% end %>
+
+    <div class="form-group">
+      <label>First Name</label>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label>Street Address</label>
+      <%= f.text_field :street_address, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <%= f.text_field :state, class: 'form-control' %>
+      <p class="help-block">Example: TX</p>
+    </div>
+    <div class="form-group">
+      <label>Zipcode</label>
+      <%= f.text_field :zip, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <%= f.text_field :phone_number, class: 'form-control' %>
+      <p class="help-block">Example: 000-000-0000</p>
+    </div>
+  <%= render 'form_btns', in_modal: in_modal, f: f %>
 <% end %>

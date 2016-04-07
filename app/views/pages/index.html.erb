@@ -4,12 +4,7 @@
   </div>
 </div>
 
-<% if flash[:notice] then %>
-  <div class="alert alert-info"><%= flash[:notice] %></div>
-<% end %>
-<% if flash[:alert] then %>
-  <div class="alert alert-danger"><%= flash[:alert] %></div>
-<% end %>
+<%= render 'flash' %>
 
 <div class="panel panel-primary">
   <div class="panel-body">
@@ -54,7 +49,7 @@
                 <% if book.checked_out? %>
                   <% if (2.days.ago..Time.now)===book.checkout_date then %>
                     <tr>
-                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= checkin_link(book) %></td>
                       <td><%= book.id %></td>
                       <td><%= book.title %></td>
                       <td><%= book.author_name %></td>
@@ -108,7 +103,7 @@
                 <% if book.checked_out? %>
                   <% if book.due_soon? then %>
                     <tr>
-                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= checkin_link(book) %></td>
                       <td><%= book.id %></td>
                       <td><%= book.title %></td>
                       <td><%= book.author_name %></td>
@@ -162,7 +157,7 @@
                 <% if book.checked_out? %>
                   <% if book.overdue? then %>
                     <tr>
-                      <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                      <td><%= checkin_link(book) %></td>
                       <td><%= book.id %></td>
                       <td><%= book.title %></td>
                       <td><%= book.author_name %></td>
@@ -218,7 +213,7 @@
               <% @books.each do |book| %>
                 <% if book.checked_out? then %>
                   <tr>
-                    <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                    <td><%= checkin_link(book) %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
                     <td><%= book.author_name %></td>

@@ -1,0 +1,11 @@
+<% if in_modal then %>
+  </div>
+  <div class="modal-footer">
+    <button type="reset" class="btn btn-default">Reset</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% else %>
+  <%= f.submit class: 'btn btn-primary' %>
+  <button type="reset" class="btn btn-default">Reset</button>
+<% end %>

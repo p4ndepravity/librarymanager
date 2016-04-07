@@ -1,3 +1,7 @@
+<% if in_modal then %>
+  <div class="modal-body">
+<% end %>
+  
 <div class="panel panel-warning">
   <div class="panel-heading">
     Books Currently Borrowing
@@ -17,7 +21,7 @@
           <% @books.each do |book| %>
             <% if book.checked_out? and book.borrower.id == @patron.id %>
               <tr>
-                <td><%= render 'check_in_btn', book: book, image: 'btn' %></td>
+                <td><%= checkin_link(book) %></td>
                 <td><%= book.id %></td>
                 <td><%= book.title.titlecase %></td>
                 <td><%= book.due_date %></td>
@@ -60,22 +64,26 @@
   </div>
 </div>
 
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-</div>
+<% if in_modal then %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+<% end %>
 
 <script>
-  $(document).ready(function() {
-    $('#borrowed').DataTable({
-      responsive: true,
-      "lengthMenu": [5,10,20,50,100],
-      "pageLength": 5
-    });
-    $('#history').DataTable({
-      responsive: true,
-      "lengthMenu": [5,10,20,50,100],
-      "pageLength": 5
-    });
+  $('#borrowed').DataTable({
+    responsive: true,
+    "lengthMenu": [5,10,20,50,100],
+    "pageLength": 5,
+    "order": [ 3, "desc" ],
+    "columnDefs": [
+      { "orderable": false, "targets": 0 }
+    ]
+  });
+  $('#history').DataTable({
+    responsive: true,
+    "lengthMenu": [5,10,20,50,100],
+    "pageLength": 5,
+    "order": [ 2, "desc" ]
   });
 </script>

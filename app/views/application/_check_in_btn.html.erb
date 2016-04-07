@@ -2,5 +2,5 @@
   <%= f.hidden_field :book_id, value: book.id %>
   <%= f.hidden_field :patron_id, value: book.borrower.id %>
   <%= f.hidden_field :transaction_type_id, value: 2 %>
-  <%= render image, f: f %>
+  <%= render image, f: f, class_tag: class_tag %>
 <% end %>
