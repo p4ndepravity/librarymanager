@@ -13,9 +13,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'jquery-turbolinks'
+gem 'googlebooks'
+gem 'certified'
 
 group :development, :test do
   gem 'byebug'
+  gem 'faker'
 end
 
 group :development do

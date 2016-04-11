@@ -7,6 +7,8 @@ class TransactionsController < ApplicationController
     elsif params[:patron_id] then
       patron = Patron.find(params[:patron_id])
       @transactions = patron.transactions
+    else
+      @transactions = Transaction.all
     end
   end  
 

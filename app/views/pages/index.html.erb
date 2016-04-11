@@ -46,23 +46,21 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.checked_out? %>
-                  <% if (2.days.ago..Time.now)===book.checkout_date then %>
-                    <tr>
-                      <td><%= checkin_link(book) %></td>
-                      <td><%= book.id %></td>
-                      <td><%= book.title %></td>
-                      <td><%= book.author_name %></td>
-                      <td><%= book.isbn_10 %></td>
-                      <td><%= book.publish_date.strftime("%B %Y") %></td>
-                      <td><%= book.genre.name %></td>
-                      <td><%= book.is_fiction %></td>
-                      <td><%= book.isbn_13 %></td>
-                      <td><%= book.rating %></td>
-                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                      <td><%= book.due_date %></td>
-                    </tr>
-                  <% end %>
+                <% if (2.days.ago..Time.now)===book.checkout_date then %>
+                  <tr>
+                    <td><%= checkin_link(book) %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
                 <% end %>
               <% end %>
             </tbody>
@@ -100,23 +98,21 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.checked_out? %>
-                  <% if book.due_soon? then %>
-                    <tr>
-                      <td><%= checkin_link(book) %></td>
-                      <td><%= book.id %></td>
-                      <td><%= book.title %></td>
-                      <td><%= book.author_name %></td>
-                      <td><%= book.isbn_10 %></td>
-                      <td><%= book.publish_date.strftime("%B %Y") %></td>
-                      <td><%= book.genre.name %></td>
-                      <td><%= book.is_fiction %></td>
-                      <td><%= book.isbn_13 %></td>
-                      <td><%= book.rating %></td>
-                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                      <td><%= book.due_date %></td>
-                    </tr>
-                  <% end %>
+                <% if book.due_soon? then %>
+                  <tr>
+                    <td><%= checkin_link(book) %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
                 <% end %>
               <% end %>
             </tbody>
@@ -154,23 +150,21 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.checked_out? %>
-                  <% if book.overdue? then %>
-                    <tr>
-                      <td><%= checkin_link(book) %></td>
-                      <td><%= book.id %></td>
-                      <td><%= book.title %></td>
-                      <td><%= book.author_name %></td>
-                      <td><%= book.isbn_10 %></td>
-                      <td><%= book.publish_date.strftime("%B %Y") %></td>
-                      <td><%= book.genre.name %></td>
-                      <td><%= book.is_fiction %></td>
-                      <td><%= book.isbn_13 %></td>
-                      <td><%= book.rating %></td>
-                      <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                      <td><%= book.due_date %></td>
-                    </tr>
-                  <% end %>
+                <% if book.overdue? then %>
+                  <tr>
+                    <td><%= checkin_link(book) %></td>
+                    <td><%= book.id %></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author_name %></td>
+                    <td><%= book.isbn_10 %></td>
+                    <td><%= book.publish_date.strftime("%B %Y") %></td>
+                    <td><%= book.genre.name %></td>
+                    <td><%= book.is_fiction %></td>
+                    <td><%= book.isbn_13 %></td>
+                    <td><%= book.rating %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                    <td><%= book.due_date %></td>
+                  </tr>
                 <% end %>
               <% end %>
             </tbody>
@@ -211,22 +205,20 @@
             </thead>
             <tbody>
               <% @books.each do |book| %>
-                <% if book.checked_out? then %>
-                  <tr>
-                    <td><%= checkin_link(book) %></td>
-                    <td><%= book.id %></td>
-                    <td><%= book.title %></td>
-                    <td><%= book.author_name %></td>
-                    <td><%= book.isbn_10 %></td>
-                    <td><%= book.publish_date.strftime("%B %Y") %></td>
-                    <td><%= book.genre.name %></td>
-                    <td><%= book.is_fiction %></td>
-                    <td><%= book.isbn_13 %></td>
-                    <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
-                  </tr>
-                <% end %>
+                <tr>
+                  <td><%= checkin_link(book) %></td>
+                  <td><%= book.id %></td>
+                  <td><%= book.title %></td>
+                  <td><%= book.author_name %></td>
+                  <td><%= book.isbn_10 %></td>
+                  <td><%= book.publish_date.strftime("%B %Y") %></td>
+                  <td><%= book.genre.name %></td>
+                  <td><%= book.is_fiction %></td>
+                  <td><%= book.isbn_13 %></td>
+                  <td><%= book.rating %></td>
+                  <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
+                  <td><%= book.due_date %></td>
+                </tr>
               <% end %>
             </tbody>
           </table>

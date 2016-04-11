@@ -47,9 +47,9 @@ class Book < ActiveRecord::Base
   #                            patron_id: self.borrower.id)
   # end
 
-  # def self.all_checked_out
-  #   Book.find_by_sql("select books.* from (select book_id, max(transactions.id) from transactions where transaction_type_id = 1 group by book_id) transactions inner join books on transactions.book_id = books.id")
-  # end
+  def self.all_checked_out
+    Book.find_by_sql("SELECT b.* FROM books b WHERE (SELECT t.transaction_type_id FROM transactions t WHERE t.book_id = b.id ORDER BY t.id DESC LIMIT 1) = 1;")
+  end
 
   def borrower
     self.transactions.last.patron

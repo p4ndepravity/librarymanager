@@ -28,34 +28,42 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/layouts/application.html.erb",
+			"file": "app/views/pages/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 12601,
+				"buffer_size": 8280,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/patrons/index.html.erb",
+			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 4932,
+				"buffer_size": 644,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/patrons_controller.rb",
+			"file": "db/seeds.rb",
 			"settings":
 			{
-				"buffer_size": 702,
+				"buffer_size": 8166,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/patrons.coffee",
+			"file": "app/controllers/pages_controller.rb",
 			"settings":
 			{
-				"buffer_size": 465,
+				"buffer_size": 169,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/book.rb",
+			"settings":
+			{
+				"buffer_size": 1535,
 				"line_ending": "Unix"
 			}
 		}
@@ -100,55 +108,138 @@
 		"/C/Sites/librarymanager/app/assets/javascripts/dataTables",
 		"/C/Sites/librarymanager/app/assets/javascripts/dataTables/bootstrap",
 		"/C/Sites/librarymanager/app/assets/javascripts/dataTables/bootstrap/3",
-		"/C/Sites/librarymanager/app/assets/stylesheets",
+		"/C/Sites/librarymanager/app/assets/javascripts/metisMenu",
+		"/C/Sites/librarymanager/app/assets/stylesheets/dataTables/bootstrap",
+		"/C/Sites/librarymanager/app/assets/stylesheets/dataTables/bootstrap/3",
 		"/C/Sites/librarymanager/app/controllers",
+		"/C/Sites/librarymanager/app/helpers",
 		"/C/Sites/librarymanager/app/models",
 		"/C/Sites/librarymanager/app/views",
+		"/C/Sites/librarymanager/app/views/application",
 		"/C/Sites/librarymanager/app/views/books",
 		"/C/Sites/librarymanager/app/views/layouts",
 		"/C/Sites/librarymanager/app/views/pages",
-		"/C/Sites/librarymanager/app/views/patrons"
+		"/C/Sites/librarymanager/app/views/patrons",
+		"/C/Sites/librarymanager/app/views/transactions",
+		"/C/Sites/librarymanager/config",
+		"/C/Sites/librarymanager/config/initializers",
+		"/C/Sites/librarymanager/db"
 	],
 	"file_history":
 	[
-		"/C/Sites/librarymanager/app/assets/javascripts/application.js",
-		"/C/Sites/librarymanager/app/assets/javascripts/application/params_helper.js.coffee",
+		"/C/Sites/librarymanager/db/schema.rb",
+		"/C/Sites/librarymanager/Gemfile",
+		"/C/Sites/librarymanager/config/initializers/ssl_configuration.rb",
+		"/C/Sites/librarymanager/app/views/patrons/_show.html.erb",
+		"/C/Sites/librarymanager/app/helpers/application_helper.rb",
+		"/C/Sites/librarymanager/app/views/books/_show.html.erb",
+		"/C/Sites/librarymanager/app/views/books/index.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/index.html.erb",
+		"/C/Sites/librarymanager/app/views/application/_check_in_btn.html.erb",
+		"/C/Sites/librarymanager/app/views/application/_btn.html.erb",
+		"/C/Sites/librarymanager/app/views/application/_icon.html.erb",
+		"/C/Sites/librarymanager/app/controllers/books_controller.rb",
+		"/C/Sites/librarymanager/app/views/books/show.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/show.html.erb",
+		"/C/Sites/librarymanager/db/seeds.rb",
+		"/C/Sites/librarymanager/app/views/application/_form_btns.html.erb",
+		"/C/Sites/librarymanager/app/views/application/_modal.html.erb",
 		"/C/Sites/librarymanager/app/controllers/patrons_controller.rb",
-		"/C/Sites/librarymanager/app/models/patron.rb",
+		"/C/Sites/librarymanager/app/models/book.rb",
+		"/C/Sites/librarymanager/app/views/books/_form.html.erb",
+		"/C/Sites/librarymanager/app/views/books/edit.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/_form.html.erb",
+		"/C/Sites/librarymanager/app/views/layouts/application.html.erb",
+		"/C/Sites/librarymanager/app/views/transactions/index.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/index.html.erb",
+		"/C/Sites/librarymanager/app/views/application/_flash.html.erb",
+		"/C/Sites/librarymanager/app/controllers/transactions_controller.rb",
+		"/C/Sites/librarymanager/app/views/patrons/edit.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/edit.js.erb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/bootstrap.css.erb",
+		"/C/Sites/librarymanager/app/models/transaction.rb",
 		"/C/Sites/librarymanager/app/assets/javascripts/patrons.coffee",
+		"/C/Sites/librarymanager/app/views/books/show.js.erb",
+		"/C/Sites/librarymanager/app/models/patron.rb",
+		"/C/Sites/librarymanager/app/controllers/application_controller.rb",
+		"/C/Sites/librarymanager/app/views/books/edit.js.erb",
+		"/C/Sites/librarymanager/app/views/books/new.js.erb",
+		"/C/Sites/librarymanager/app/views/transactions/new.js.erb",
+		"/C/Sites/librarymanager/app/views/patrons/show.js.erb",
+		"/C/Sites/librarymanager/app/views/patrons/new.js.erb",
+		"/C/Sites/librarymanager/app/views/layouts/_icon.html.erb",
+		"/C/Sites/librarymanager/app/assets/javascripts/books.coffee",
+		"/C/Sites/librarymanager/app/assets/javascripts/application/application.coffee",
+		"/C/Sites/librarymanager/app/views/layouts/_btn.html.erb",
+		"/C/Sites/librarymanager/app/views/layouts/_check_in_btn.html.erb",
+		"/C/Sites/librarymanager/app/assets/javascripts/pages.coffee",
+		"/C/Sites/librarymanager/app/controllers/pages_controller.rb",
+		"/C/Sites/librarymanager/app/assets/javascripts/transactions.coffee",
+		"/C/Sites/librarymanager/app/views/transactions/_checkOut.html.erb",
+		"/C/Sites/librarymanager/app/views/books/_checkOut.html.erb",
+		"/C/Sites/librarymanager/app/views/books/checkOut.js.erb",
+		"/C/Sites/librarymanager/app/views/books/checkIn.js.erb",
+		"/C/Sites/librarymanager/app/helpers/books_helper.rb",
+		"/C/Sites/librarymanager/app/views/pages/new.js.erb",
+		"/C/Sites/librarymanager/app/views/pages/_patronForm.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/_bookForm.html.erb",
+		"/C/Sites/librarymanager/config/routes.rb",
+		"/C/Sites/librarymanager/app/views/pages/new_patron.js.erb",
+		"/C/Sites/librarymanager/app/views/pages/_check_in.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/checkin.js.erb",
 		"/C/Sites/librarymanager/app/assets/javascripts/patrons.coffee.erb",
+		"/C/Sites/librarymanager/app/views/layouts/_modal.html.erb",
+		"/C/Sites/librarymanager/app/helpers/patrons_helper.rb",
+		"/C/Sites/librarymanager/app/views/pages/_checkin.html.erb",
+		"/C/Sites/librarymanager/app/views/books/_transaction-form.html.erb",
+		"/C/Sites/librarymanager/app/views/books/_checkin.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/_new_patron.html.erb",
+		"/C/Sites/librarymanager/app/views/books/_checkout.html.erb",
+		"/C/Sites/librarymanager/app/views/books/checkin.js.erb",
+		"/C/Sites/librarymanager/app/views/patrons/_edit.html.erb",
+		"/C/Sites/librarymanager/app/views/books/checkout.js.erb",
+		"/C/Sites/librarymanager/app/views/pages/_form.html.erb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/font-awesome.css.erb",
+		"/C/Sites/librarymanager/app/assets/javascripts/application.js",
+		"/C/Sites/librarymanager/app/assets/javascripts/sb-admin-2.js",
+		"/C/Sites/librarymanager/app/assets/javascripts/application/params_helper.js.coffee",
+		"/C/Sites/librarymanager/app/views/books/_edit.html.erb",
+		"/C/Sites/librarymanager/app/views/transactions/edit.html.erb",
+		"/C/Sites/librarymanager/app/views/patrons/_edit-modal.html.erb",
+		"/C/Sites/librarymanager/app/views/layouts/_confirm.html.erb",
+		"/C/Sites/librarymanager/app/assets/javascripts/destroy.js.erb",
+		"/C/Sites/librarymanager/app/views/pages/_delete_modal.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/_confirm.html.erb",
+		"/C/Sites/librarymanager/app/models/genre.rb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/bootstrap.css",
+		"/C/Sites/librarymanager/app/assets/javascripts/dataTables/bootstrap/3/dataTables.bootstrap.js",
+		"/C/Sites/librarymanager/app/assets/stylesheets/dataTables/bootstrap/3/dataTables.bootstrap.css",
+		"/C/Sites/librarymanager/app/assets/javascripts/dataTables/bootstrap/3/dataTables.responsive.js",
+		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Sites/librarymanager/app/views/patrons/new.html.erb",
+		"/C/Sites/librarymanager/app/views/books/new.html.erb",
+		"/C/Sites/librarymanager/app/assets/stylesheets/sb-admin-2.css",
+		"/C/Sites/librarymanager/app/assets/javascripts/application/metisMenuInit.js.coffee",
+		"/C/Sites/librarymanager/app/assets/javascripts/metisMenu/metisMenu.js",
+		"/C/Sites/librarymanager/app/views/patrons/_form_buttons.html.erb",
+		"/C/Sites/librarymanager/app/views/pages/index.html",
 		"/C/Sites/librarymanager/app/assets/javascripts/application/insert_param.js.coffee",
 		"/C/Sites/librarymanager/app/assets/javascripts/insert_param.js.coffee",
-		"/C/Sites/librarymanager/app/assets/javascripts/books.coffee",
-		"/C/Sites/librarymanager/app/assets/javascripts/transactions.coffee",
-		"/C/Sites/librarymanager/db/schema.rb",
-		"/C/Sites/librarymanager/app/views/books/index.html.erb",
-		"/C/Sites/librarymanager/app/controllers/books_controller.rb",
-		"/C/Sites/librarymanager/app/views/patrons/index.html.erb",
 		"/C/Sites/librarymanager/config/puma.rb",
-		"/C/Sites/librarymanager/Gemfile",
 		"/C/Sites/librarymanager/.gitignore",
 		"/C/Sites/librarymanager/Procfile",
 		"/C/Sites/librarymanager/config/database.yml",
-		"/C/Sites/librarymanager/config/routes.rb",
-		"/C/Sites/librarymanager/app/views/layouts/application.html.erb",
 		"/C/Sites/librarymanager/app/assets/javascripts/bootstrap.js",
-		"/C/Sites/librarymanager/app/assets/stylesheets/bootstrap.css",
 		"/C/Sites/librarymanager/app/assets/stylesheets/application.css",
 		"/C/Sites/librarymanager/app/assets/javascripts/jquery.turbolinks.js",
 		"/C/Sites/librarymanager/app/assets/javascripts/patrons.js.coffee",
-		"/C/Sites/librarymanager/app/views/patrons/show.html.erb",
 		"/C/Sites/librarymanager/app/views/patrons/index.html.erb.bak.erb",
 		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Sites/librarymanager/app/assets/javascripts/jquery.dataTables.js",
 		"/C/Sites/librarymanager/app/assets/stylesheets/jquery.dataTables.css",
-		"/C/Sites/librarymanager/app/views/pages/index.html",
 		"/C/Sites/librarymanager/README.md",
-		"/C/Sites/librarymanager/app/assets/stylesheets/font-awesome.css.erb",
 		"/C/Sites/librarymanager/config/application.rb",
-		"/C/Sites/librarymanager/app/controllers/pages_controller.rb",
-		"/C/Sites/librarymanager/app/controllers/transactions_controller.rb",
 		"/C/Sites/librarymanager/app/views/transactions/search.html.erb",
 		"/C/Sites/librarymanager/app/views/home/index.html.erb",
 		"/C/Sites/librarymanager/app/views/patrons/menu.html.erb",
@@ -156,16 +247,11 @@
 		"/C/Sites/librarymanager/app/views/books/search.html.erb",
 		"/C/Sites/librarymanager/app/views/transactions/menu.html.erb",
 		"/C/Sites/librarymanager/app/views/patrons/search.html.erb",
-		"/C/Sites/librarymanager/db/seeds.rb",
-		"/C/Sites/librarymanager/app/models/transaction.rb",
-		"/C/Sites/librarymanager/app/models/genre.rb",
-		"/C/Sites/librarymanager/app/models/book.rb",
 		"/C/Sites/librarymanager/db/migrate/20160316210516_create_transaction_types.rb",
 		"/C/Sites/librarymanager/db/migrate/20160316193316_create_transaction_types.rb",
 		"/C/Sites/librarymanager/db/migrate/20160316204412_add_foreign_keys_to_tables.rb",
 		"/C/Sites/librarymanager/app/models/transaction_type.rb",
 		"/C/Sites/librarymanager/db/migrate/20160316201544_rename_id_columns_on_all_tables.rb",
-		"/C/Users/Trenton/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Sites/librarymanager/config/database.yml.example.yml"
 	],
 	"find":
@@ -177,6 +263,11 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Sites\\librarymanager\\app\\views",
+			"C:\\Sites\\librarymanager\\app\\assets",
+			"C:\\Sites\\librarymanager\\app\\assets\\stylesheets",
+			"<current file>",
+			"",
 			"C:\\Sites\\librarymanager\\app\\assets",
 			"C:\\Sites\\librarymanager\\app\\assets\\javascripts",
 			"C:\\Sites\\librarymanager\\app\\assets",
@@ -188,6 +279,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"published_date",
+			"\"\n",
+			"}\"\n",
+			"%>\n",
+			"page-wrapper",
+			"unstyled",
+			"btn",
+			"@media (min",
+			"featureNode",
+			"sDom",
+			"dom",
+			"sfilterinput",
+			"_fnFeatureHtmlFilter",
+			"sdom",
+			"Filter",
+			"_fnFeatureHtmlFilter",
+			"filter",
+			".dataTables_filter",
+			"select",
+			"patron",
 			":before",
 			"::before",
 			"::after",
@@ -218,6 +329,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"book",
 			"  "
 		],
 		"reverse": false,
@@ -234,19 +346,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/layouts/application.html.erb",
+					"file": "app/views/pages/index.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12601,
+						"buffer_size": 8280,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10717,
-								10717
+								238,
+								238
 							]
 						],
 						"settings":
@@ -256,7 +368,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3919.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -264,49 +376,115 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/patrons/index.html.erb",
-					"semi_transient": false,
+					"file": "Gemfile",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4932,
+						"buffer_size": 644,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								981,
-								981
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
 						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
 					"buffer": 2,
-					"file": "app/controllers/patrons_controller.rb",
+					"file": "db/seeds.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 702,
+						"buffer_size": 8166,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								146,
-								146
+								478,
+								478
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/pages_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "app/models/book.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1535,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1268,
+								1268
 							]
 						],
 						"settings":
@@ -316,40 +494,17 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/patrons.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 465,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -370,16 +525,36 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
@@ -430,9 +605,10 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 207.0,
+	"side_bar_width": 259.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
+		"max_columns": 2
 	}
 }

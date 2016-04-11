@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :patrons, concerns: :borrow
 
   resources :books, concerns: :borrow
+
+  get '/transactions', to: 'transactions#index'
 end
