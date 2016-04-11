@@ -5,12 +5,44 @@
 $(document).ready ->
   table = $('#recent').DataTable
     responsive: true
+    'order': [
+      3
+      'desc'
+    ]
+    'columnDefs': [ {
+      'orderable': false
+      'targets': 0
+    } ]
 
   table = $('#soon').DataTable
     responsive: true
+    'order': [
+      3
+      'desc'
+    ]
+    'columnDefs': [ {
+      'orderable': false
+      'targets': 0
+    } ]
 
   table = $('#over').DataTable
     responsive: true
+    'order': [
+      3
+      'desc'
+    ]
+    'columnDefs': [ {
+      'orderable': false
+      'targets': 0
+    } ]
 
   table = $('#all').DataTable
     responsive: true
+    'order': [
+      3
+      'desc'
+    ]
+    'columnDefs': [ {
+      'orderable': false
+      'targets': 0
+    } ]

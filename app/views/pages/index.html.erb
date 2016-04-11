@@ -33,6 +33,8 @@
                 <th></th>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Due Date</th>
+                <th>Borrower</th>
                 <th>Author</th>
                 <th>ISBN-10</th>
                 <th>Published</th>
@@ -40,8 +42,6 @@
                 <th>Fiction?</th>
                 <th>ISBN-13</th>
                 <th>Rating</th>
-                <th>Borrower</th>
-                <th>Due Date</th>
               </tr>
             </thead>
             <tbody>
@@ -51,6 +51,8 @@
                     <td><%= checkin_link(book) %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
+                    <td><%= book.due_date %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
                     <td><%= book.author_name %></td>
                     <td><%= book.isbn_10 %></td>
                     <td><%= book.publish_date.strftime("%B %Y") %></td>
@@ -58,8 +60,6 @@
                     <td><%= book.is_fiction %></td>
                     <td><%= book.isbn_13 %></td>
                     <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
                   </tr>
                 <% end %>
               <% end %>
@@ -85,6 +85,8 @@
                 <th></th>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Due Date</th>
+                <th>Borrower</th>
                 <th>Author</th>
                 <th>ISBN-10</th>
                 <th>Published</th>
@@ -92,8 +94,6 @@
                 <th>Fiction?</th>
                 <th>ISBN-13</th>
                 <th>Rating</th>
-                <th>Borrower</th>
-                <th>Due Date</th>
               </tr>
             </thead>
             <tbody>
@@ -103,6 +103,8 @@
                     <td><%= checkin_link(book) %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
+                    <td><%= book.due_date %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
                     <td><%= book.author_name %></td>
                     <td><%= book.isbn_10 %></td>
                     <td><%= book.publish_date.strftime("%B %Y") %></td>
@@ -110,8 +112,6 @@
                     <td><%= book.is_fiction %></td>
                     <td><%= book.isbn_13 %></td>
                     <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
                   </tr>
                 <% end %>
               <% end %>
@@ -137,6 +137,8 @@
                 <th></th>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Due Date</th>
+                <th>Borrower</th>
                 <th>Author</th>
                 <th>ISBN-10</th>
                 <th>Published</th>
@@ -144,8 +146,6 @@
                 <th>Fiction?</th>
                 <th>ISBN-13</th>
                 <th>Rating</th>
-                <th>Borrower</th>
-                <th>Due Date</th>
               </tr>
             </thead>
             <tbody>
@@ -155,6 +155,8 @@
                     <td><%= checkin_link(book) %></td>
                     <td><%= book.id %></td>
                     <td><%= book.title %></td>
+                    <td><%= book.due_date %></td>
+                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
                     <td><%= book.author_name %></td>
                     <td><%= book.isbn_10 %></td>
                     <td><%= book.publish_date.strftime("%B %Y") %></td>
@@ -162,8 +164,6 @@
                     <td><%= book.is_fiction %></td>
                     <td><%= book.isbn_13 %></td>
                     <td><%= book.rating %></td>
-                    <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                    <td><%= book.due_date %></td>
                   </tr>
                 <% end %>
               <% end %>
@@ -192,6 +192,8 @@
                 <th></th>
                 <th>ID</th>
                 <th>Title</th>
+                <th>Due Date</th>
+                <th>Borrower</th>
                 <th>Author</th>
                 <th>ISBN-10</th>
                 <th>Published</th>
@@ -199,8 +201,6 @@
                 <th>Fiction?</th>
                 <th>ISBN-13</th>
                 <th>Rating</th>
-                <th>Borrower</th>
-                <th>Due Date</th>
               </tr>
             </thead>
             <tbody>
@@ -209,6 +209,8 @@
                   <td><%= checkin_link(book) %></td>
                   <td><%= book.id %></td>
                   <td><%= book.title %></td>
+                  <td><%= book.due_date %></td>
+                  <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
                   <td><%= book.author_name %></td>
                   <td><%= book.isbn_10 %></td>
                   <td><%= book.publish_date.strftime("%B %Y") %></td>
@@ -216,8 +218,6 @@
                   <td><%= book.is_fiction %></td>
                   <td><%= book.isbn_13 %></td>
                   <td><%= book.rating %></td>
-                  <td><%= book.borrower.name %> <%= book.borrower.phone_number %></td>
-                  <td><%= book.due_date %></td>
                 </tr>
               <% end %>
             </tbody>
