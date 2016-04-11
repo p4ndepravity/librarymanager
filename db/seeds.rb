@@ -63,15 +63,21 @@ if Rails.env.development? or Rails.env.test? then
                 is_fiction: rand(0..1))
   end
 
-  Patron.create last_name: 'Cena', first_name: 'John', street_address: Faker::Address.street_address, city: 'Austin', state: 'TX', zip: Faker::Address.postcode, phone_number: Faker::PhoneNumber.cell_phone
+  Patron.create last_name: 'Cena', first_name: 'John', street_address: Faker::Address.street_address, city: 'Austin', state: 'TX', zip: Faker::Address.postcode, phone_number: Faker::PhoneNumber.cell_phone, email: Faker::Internet.free_email('john.cena'), password: 'UcantCme', password_confirmation: 'UcantCme'
   (1..100).each do |i|
-    Patron.create(last_name: Faker::Name.last_name, 
-                  first_name: Faker::Name.first_name, 
+    lname = Faker::Name.last_name
+    fname = Faker::Name.first_name
+    username = Faker::Internet.user_name("#{fname} #{lname}", %w(. _ -))
+    Patron.create(last_name: lname, 
+                  first_name: fname, 
                   street_address: Faker::Address.street_address,
                   city: Faker::Address.city, 
                   state: Faker::Address.state_abbr, 
                   zip: Faker::Address.postcode, 
-                  phone_number: Faker::PhoneNumber.cell_phone)
+                  phone_number: Faker::PhoneNumber.cell_phone,
+                  email: Faker::Internet.free_email(username),
+                  password: "password#{i+1}",
+                  password_confirmation: "password#{i+1}")
   end
 
   Book.all.each do |book|

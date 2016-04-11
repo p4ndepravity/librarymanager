@@ -5,4 +5,9 @@ class PagesController < ApplicationController
     @patron = Patron.new
     @transaction = Transaction.new
 	end
+
+  def signup
+    @patron = Patron.new
+    render layout: false
+  end
 end

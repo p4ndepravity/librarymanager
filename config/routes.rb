@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :books, concerns: :borrow
 
   get '/transactions', to: 'transactions#index'
+
+  get 'signup' => 'pages#signup'
 end

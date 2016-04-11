@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160316210516) do
     t.string   "state"
     t.string   "zip"
     t.string   "phone_number"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -66,4 +68,5 @@ ActiveRecord::Schema.define(version: 20160316210516) do
   add_foreign_key "transactions", "patrons"
   add_foreign_key "transactions", "transaction_types"
   add_foreign_key "books", "genres"
+  add_index :patrons, :email, unique: true
 end
