@@ -22,19 +22,20 @@
         </thead>
         <tbody>
           <% @patrons.each do |patron| %>
-            <tr>  
+            <tr>
               <td><%= patron.id %></td>
               <td>
                 <%= patron.name %>
-                <%= delete_link(patron, 'patron') %>
+                <%= delete_link(patron,'patron') %>
                 <%= edit_link(patron,'patron') %>
                 <%= show_link(patron,'patron') %>
                 <%= profile_link(patron,'patron') %>
               </td>
-              <td><%= patron.street_address.titlecase %>, 
-                  <%= patron.city.titlecase %>, 
-                  <%= patron.state.upcase %> 
-                  <%= patron.zip %>
+              <td>
+                <%= patron.street_address.titlecase %>, 
+                <%= patron.city.titlecase %>, 
+                <%= patron.state.upcase %> 
+                <%= patron.zip %>
               </td>
               <td><%= patron.phone_number %></td>
             </tr>
